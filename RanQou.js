@@ -11,7 +11,7 @@ function new_quote(){
 	
 	let request= new XMLHttpRequest();
 	//set the request
-	request.open('GET','http://quotes.stormconsultancy.co.uk/random.json');
+	request.open('GET','https://random-quote-generator.herokuapp.com/api/quotes/random');
 	//when the request get loaded
 	request.onload=function(){
 
