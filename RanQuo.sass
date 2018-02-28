@@ -1,0 +1,79 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans')
+
+*
+    padding: 0px
+    margin: 0px
+    box-sizing: border-box
+
+body
+    background: linear-gradient(to right, #3388c8, #ca33a8)    
+
+//general styling
+
+.flex
+    display: flex
+
+
+
+//specific styling
+
+#content
+    width: 40%
+    margin: 30px auto
+    text-align: center
+    & h1
+        color: rgb(255,255,140) 
+        font-size: 50px
+        font-family: 'Courgette'
+        margin-bottom: 20px
+    & #quote-box
+        background-color: white
+        border: 1px solid white
+        border-radius: 5px
+        padding: 10px
+        & p
+            margin-bottom: 10px
+            font-family: 'Open Sans'
+            color: darkslategrey
+        & #quote
+            margin-top: 10px    
+        & #buttons
+            justify-content: space-between
+            align-items: baseline
+            
+            & #twit
+                background-color: #3388c8
+                color: white
+                padding: 5px
+                border: 1px solid #3388c8
+                border-radius: 2px
+                cursor: pointer 
+            & #new   
+                padding: 5px
+                border-radius: 3px
+                background-color: #ca33a8
+                color: white
+                border: 1px solid #ca33a8
+                cursor: pointer   
+
+
+//media 
+
+@media screen and(max-width:800px)
+    #content
+        width: 80%
+
+
+@media screen and(max-width:501px)
+    #content
+        width: 100%
+        margin: 0px
+    #content #quote-box #buttons 
+        flex-direction: column
+        align-items: center
+        justify-items: center
+        & #twit
+            padding: 5px 20px
+        & *
+            margin-bottom: 10px                
