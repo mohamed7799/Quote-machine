@@ -3,7 +3,7 @@ let New = document.getElementById("new");
 let quote = document.getElementById("quote");
 let author = document.getElementById("author");
 let twitter = document.getElementById("twit");
-let data;
+let data = "";
 
 //functions
 
@@ -11,6 +11,7 @@ function new_quote() {
   fetch("https://api.quotable.io/random")
     .then(res => res.json())
     .then(body => {
+      data = body.content;
       quote.innerHTML = `"${body.content}"`;
       author.innerHTML = `- ${body.author}`;
     })
@@ -18,10 +19,10 @@ function new_quote() {
 }
 
 function Twit() {
-  if (data.quote.length > 140) {
+  if (data.length > 140) {
     alert("The Quote IS Too Big");
   } else {
-    let twtLink = "https://twitter.com/intent/tweet?text=" + data.quote;
+    let twtLink = "https://twitter.com/intent/tweet?text=" + data;
     window.open(twtLink);
   }
 }
